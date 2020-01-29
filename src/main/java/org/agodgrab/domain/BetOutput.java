@@ -44,9 +44,29 @@ public class BetOutput {
         this.second = this.second.add(newSecond);
     }
 
+    public static BetOutput getNullBetOutput(){
+        return new BetOutput("no fixture", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
+    }
+
     @Override
     public String toString() {
         return String.format("%s 1: %s X: %s 2: %s",
                 fixture, first, draw, second);
+    }
+
+    public String getFixture() {
+        return fixture;
+    }
+
+    public BigDecimal getFirst() {
+        return first;
+    }
+
+    public BigDecimal getDraw() {
+        return draw;
+    }
+
+    public BigDecimal getSecond() {
+        return second;
     }
 }

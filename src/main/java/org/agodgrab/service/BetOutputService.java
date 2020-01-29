@@ -12,15 +12,19 @@ import java.util.Optional;
 @Service
 public class BetOutputService {
 
-    @Autowired
     private BetOutputRepository repository;
+
+    @Autowired
+    public BetOutputService(BetOutputRepository repository) {
+        this.repository = repository;
+    }
 
     public BetOutput uploading(Bet bet) {
         return update(bet, findByFixture(bet.getFixture()).orElse(new BetOutput(bet.getFixture())));
     }
 
-    public BetOutput generateResponse(Bet bet) throws NoSuchElementException {
-        return findByFixture(bet.getFixture()).orElseThrow(NoSuchElementException::new);
+    public BetOutput generateResponse(Bet bet){
+        return findByFixture(bet.getFixture()).orElse(BetOutput.getNullBetOutput());
     }
 
     private Optional<BetOutput> findByFixture(String fixture) {

@@ -8,11 +8,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class BetService {
 
-    @Autowired
-    BetRepository betRepository;
+    private BetRepository betRepository;
+    private BetOutputService betOutputService;
 
     @Autowired
-    BetOutputService betOutputService;
+    public BetService(BetRepository betRepository, BetOutputService betOutputService) {
+        this.betRepository = betRepository;
+        this.betOutputService = betOutputService;
+    }
 
     public Bet saveBet(Bet bet) {
         return betRepository.save(bet);
