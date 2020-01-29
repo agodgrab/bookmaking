@@ -1,4 +1,4 @@
-package org.agodgrab;
+package org.agodgrab.config;
 
 
 import com.mongodb.MongoClient;
