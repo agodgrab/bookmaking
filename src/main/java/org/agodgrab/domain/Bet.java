@@ -1,4 +1,4 @@
-package org.agodgrab;
+package org.agodgrab.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -24,6 +24,26 @@ public class Bet {
     }
 
     public Bet() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getFixture() {
+        return fixture;
+    }
+
+    public String getOutcome() {
+        return outcome;
+    }
+
+    public BigDecimal getStake() {
+        return stake;
+    }
+
+    public BigDecimal getOdds() {
+        return odds;
     }
 
     @Override
