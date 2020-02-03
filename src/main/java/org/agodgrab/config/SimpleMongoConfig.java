@@ -6,16 +6,20 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
+import static org.agodgrab.config.Config.INSTANCE;
+
 @Configuration
 public class SimpleMongoConfig {
 
     @Bean
-    public MongoClient mongo() {
-        return new MongoClient("localhost");
+    public MongoTemplate mongoTemplate() {
+        return new MongoTemplate(mongo(), INSTANCE.getDatabase());
     }
 
     @Bean
-    public MongoTemplate mongoTemplate() throws Exception {
-        return new MongoTemplate(mongo(), "bookmaking");
+    public MongoClient mongo() {
+        return new MongoClient(INSTANCE.getHost(), INSTANCE.getPort() );
     }
+
+
 }

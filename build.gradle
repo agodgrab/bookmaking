@@ -38,4 +38,5 @@ dependencies {
     testCompile("junit:junit")
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    compile group: 'com.typesafe', name: 'config', version: '1.4.0'
 }
