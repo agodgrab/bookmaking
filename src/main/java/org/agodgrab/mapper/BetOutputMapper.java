@@ -2,7 +2,9 @@ package org.agodgrab.mapper;
 
 import org.agodgrab.domain.BetOutput;
 import org.agodgrab.domain.BetOutputDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BetOutputMapper implements Mapper<BetOutput, BetOutputDto> {
 
     @Override
