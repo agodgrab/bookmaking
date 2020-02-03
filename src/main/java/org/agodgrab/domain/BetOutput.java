@@ -8,9 +8,10 @@ import java.math.BigDecimal;
 @Document(collection = "bet_output")
 public class BetOutput {
 
+    private final static BetOutput nullBetOutput = new BetOutput("no fixture", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
+
     @Id
     private String fixture;
-
     private BigDecimal first;
     private BigDecimal draw;
     private BigDecimal second;
@@ -45,7 +46,7 @@ public class BetOutput {
     }
 
     public static BetOutput getNullBetOutput(){
-        return new BetOutput("no fixture", BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO);
+        return nullBetOutput;
     }
 
     @Override
