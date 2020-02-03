@@ -37,4 +37,5 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("junit:junit")
     testCompile 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 }
