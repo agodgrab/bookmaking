@@ -41,4 +41,10 @@ public class BetOutputDto {
     public BigDecimal getSecond() {
         return second;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s 1: %s X: %s 2: %s",
+                fixture, first, draw, second);
+    }
 }
